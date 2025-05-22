@@ -1,0 +1,33 @@
+body {
+    font-family: impact, Roboto, Arial, sans-serif;
+    text-align: center;
+    background-color: #e6a5d9;;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 2em;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Organiza los botones en vertical */
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    font-size: 1.5em; 
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    background-color: black; 
+    color: #ccff00;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 8rem;
+}
+
+button:hover {
+    background-color: #5c4f59;
+}
