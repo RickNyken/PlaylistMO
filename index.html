@@ -13,21 +13,42 @@
         <button id="estar">Estar</button>
         <button id="parecer">Parecer</button>
     </div>
-    <audio id="audioSer" src="Audio/SER.mp3"></audio>
-    <audio id="audioEstar" src="Audio/ESTAR.mp3"></audio>
-    <audio id="audioParecer" src="Audio/PARECER.mp3"></audio>
+    <audio id="audioSer" src="ser.mp3"></audio>
+    <audio id="audioEstar" src="estar.mp3"></audio>
+    <audio id="audioParecer" src="parecer.mp3"></audio>
     <script>
+        let audios = {
+            ser: document.getElementById("audioSer"),
+            estar: document.getElementById("audioEstar"),
+            parecer: document.getElementById("audioParecer")
+        };
+        let currentAudio = null;
+
+        function toggleAudio(audio) {
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0; // Reinicia el audio cuando se cambia
+            }
+            if (audio.paused) {
+                audio.play();
+                currentAudio = audio;
+            } else {
+                audio.pause();
+            }
+        }
+
         document.getElementById("ser").addEventListener("click", function() {
-            document.getElementById("audioSer").play();
+            toggleAudio(audios.ser);
         });
 
         document.getElementById("estar").addEventListener("click", function() {
-            document.getElementById("audioEstar").play();
+            toggleAudio(audios.estar);
         });
 
         document.getElementById("parecer").addEventListener("click", function() {
-            document.getElementById("audioParecer").play();
+            toggleAudio(audios.parecer);
         });
     </script>
 </body>
 </html>
+
