@@ -13,5 +13,21 @@
         <button id="estar">Estar</button>
         <button id="parecer">Parecer</button>
     </div>
+    <audio id="audioSer" src="Audio/SER.mp3"></audio>
+    <audio id="audioEstar" src="Audio/ESTAR.mp3"></audio>
+    <audio id="audioParecer" src="Audio/PARECER.mp3"></audio>
+    <script>
+        document.getElementById("ser").addEventListener("click", function() {
+            document.getElementById("audioSer").play();
+        });
+
+        document.getElementById("estar").addEventListener("click", function() {
+            document.getElementById("audioEstar").play();
+        });
+
+        document.getElementById("parecer").addEventListener("click", function() {
+            document.getElementById("audioParecer").play();
+        });
+    </script>
 </body>
 </html>
